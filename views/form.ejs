@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Submit a Movie</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f4f4f4; }
+    form { background: white; padding: 20px; max-width: 400px; margin: auto; border-radius: 5px; }
+    input, button { width: 100%; padding: 10px; margin: 10px 0; }
+    .error { color: red; text-align: center; }
+  </style>
+</head>
+<body>
+  <h2>Submit Your Favorite Movie</h2>
+  <% if (error) { %>
+    <p class="error"><%= error %></p>
+  <% } %>
+  <form action="/submit" method="POST">
+    <input type="text" name="movie" placeholder="Movie Name" />
+    <input type="number" name="rating" min="1" max="10" placeholder="Rating (1-10)" />
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

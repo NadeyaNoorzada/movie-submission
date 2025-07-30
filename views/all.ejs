@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Movies</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f4f4f4; }
+    ul { list-style: none; padding: 0; }
+    li { background: white; margin: 10px 0; padding: 10px; border-radius: 5px; }
+    form { margin-top: 20px; text-align: center; }
+    button { padding: 10px 20px; background: red; color: white; border: none; cursor: pointer; }
+    a { text-decoration: none; color: blue; display: block; text-align: center; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h2>All Submitted Movies</h2>
+  <ul>
+    <% movies.forEach((m, i) => { %>
+      <li><strong><%= m.movie %></strong> - Rating: <%= m.rating %></li>
+    <% }); %>
+  </ul>
+
+  <form action="/delete" method="POST">
+    <button type="submit">Delete All Movies</button>
+  </form>
+
+  <a href="/">Back to Form</a>
+</body>
+</html>
